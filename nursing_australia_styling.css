@@ -1,0 +1,1275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.trust-div-1, .trust-div-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    gap: 50px;
+}
+
+body {
+    font-family: "Instrument Sans", sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, #ffcc80 0%, #ffffff 55%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar-div {
+    width: 90vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    position: relative;
+    width: 45vw;
+    padding: 8px 12px 12px 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #000;
+    font-weight: lighter;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 6px 12px;
+    top: 2px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    transition: top 1.5s ease;
+}
+
+.navbar:has(a.active) .artemis {
+    position: relative;
+    top: 0px;
+}
+
+.navbar a.active:not(#artemisID) {
+    color: #8A6EFF;
+    position: relative;
+    top: -2px;
+}
+
+.navbar .underline {
+    position: absolute;
+    bottom: 18px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #8A6EFF;
+    transition: transform 1.5s ease;
+    pointer-events: none;
+}
+
+.artemis {
+    background: #9E87FF;
+    color: white;
+    border-radius: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    margin: -16px -24px;
+}
+
+.navbar a:last-child.active + .underline {
+    display: none;
+}
+
+.navbar.glow {
+    background: rgba(252, 206, 138, 0.7);
+    box-shadow: 0px 4px 15px rgba(255,204,128,1);
+    transition: all 0.3s ease;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-left: -20px;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+}
+
+.footer-section {
+    height: 500px;
+    background-color: rgba(255,213, 143, 0.7);
+    width: 100%;
+    margin-top: 100px;
+}
+
+.hamburger-menu {
+    display: none;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+    margin-bottom: 24px;
+}
+
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    cursor: pointer;
+    color: #818181;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: width 1s ease;
+    z-index: 10000000000001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 80px 0;
+    overflow-y: hidden;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.sidebar.active {
+    width: 90%;
+    z-index: 10000000000000;
+}
+
+.bottom-content {
+    position: absolute;
+    bottom: 100px;
+    text-align: center;
+    overflow-y: hidden;
+}
+
+.bottom-content img {
+    max-width: 200x;
+    margin-bottom: -50px;
+}
+
+.bottom-content p {
+    color: #818181;
+    margin: 5px 0 0 0;
+    font-size: 20px;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 16px;
+}
+
+
+.hero-section {
+    margin-top: -20px;
+    height: auto;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #ffcc80 0%, white 35%);
+    z-index: 100;
+}
+
+.artemis-image-wrapper {
+    height: 70vh;
+    width: 80vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+@media (max-width: 800px) {
+    .artemis-image-wrapper {
+        height: 45vh;
+    }
+}
+
+.artemis-image {
+    height: 100%;
+    width: 100%;
+    min-width: 900px;
+    border-radius: 10px;
+}
+
+.hero-paragraph {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: auto;
+    margin-top: 20px;
+}
+
+.hero-heading-1 {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-weight: 200;
+    font-size: 54px;
+    color: #403219;
+    letter-spacing: -5px;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-heading-1 span {
+    font-weight: 550;
+    font-family: "Instrument Sans", sans-serif;
+    font-style: normal;
+    letter-spacing: normal;
+}
+
+.hero-heading-2 {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 14px;
+    color: #ffeac8;
+    text-align: center;
+    width: auto;
+    padding: 14px 20px;
+    background: #8A6EFF;
+    border-radius: 28px;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.hero-heading-2:hover {
+    background: #ffeac8;
+    color: #8A6EFF;
+}
+
+.hero-para-small {
+    font-family: "Instrument Sans", sans-serif;
+    color: #403219;
+    font-size: 18px;
+    text-align: center;
+    width: 70%;
+}
+
+.about-artemis-hospitals-section {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 10vw;
+    gap: 5%;
+    background: white;
+}
+
+.about-artemis-left {
+    width: 45%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 4vh;
+}
+
+.about-artemis-left-para {
+    font-size: 18px;
+    font-family: "Instrument Sans", sans-serif;
+    color: #403219;
+    font-weight: 350;
+}
+
+.about-artemis-left-button {
+    align-self: flex-start;
+    text-align: left;
+    width: auto;
+    padding: 14px 20px;
+    background: #8A6EFF;
+    border-radius: 28px;
+    color: #ffeac8;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.about-artemis-left-button:hover {
+    color: #8A6EFF;
+    background: #ffeac8;
+}
+
+.about-artemis-image {
+    height: 40vh;
+    width: 50%;
+}
+
+.ahrpa-nurses-section {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+.ahrpa-section-header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ahrpa-heading {
+    font-size: 64px;
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    color: #8A6EFF;
+    letter-spacing: -5px;
+}
+
+.ahrpa-heading span {
+    color: #ffcc80;
+}
+
+.ahrpa-button {
+    font-style: "Instrument Sans", sans-serif;
+    font-weight: 300;
+    color: #ffeac8;
+    background: #8A6EFF;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.ahrpa-button:hover {
+    color: #8A6EFF;
+    background: #ffeac8;
+}
+
+.ahrpa-section-byline {
+    margin-top: 50px;
+    width: 100vw;
+    gap: 1vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ahrpa-byline-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    gap: 1vw;
+    height: auto;
+    font-family: "Instrument Saans", sans-serif;
+    font-size: 40px;
+    font-weight: 550;
+}
+
+.choti-heading-byline {
+    height: 25px;
+    width: 22px;
+}
+
+@media (max-width: 500px) {
+    #ek-wo {
+        height: 42px;
+    }
+}
+
+.ahrpa-byline-para {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: "Instrument Serif", sans-serif;
+    width: 28vw;
+    text-align: center;
+    margin-top: 15px;
+    color: #403219;
+}
+
+.ahrpa-byline-para span {
+    font-weight: 600;
+}
+
+.ahrpa-section-highlights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90vw;
+    height: auto;
+    margin-top: 40px;
+}
+
+.ahrpa-highlights-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    gap: 1vw;
+}
+
+.ahrpa-byline-small {
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 550;
+    font-size: 28px;
+    color: #403219;
+}
+
+.ahrpa-highlights-bigrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 90vw;
+    margin-top: 20px;
+}
+
+.ahrpa-highlights-row-1, .ahrpa-highlights-row-2 {
+    width: 44vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.ahrpa-highlights-container {
+    height: auto;
+    max-height: 50vh;
+    width: 21vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.ahrpa-highlights-container-img {
+    width: 80%;
+    height: 30vh;
+}
+
+@media (max-width: 800px) {
+    .ahrpa-highlights-container-img {
+        height: 20vh;
+    }
+}
+
+.ahrpa-highlights-container-text {
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 550;
+    color: #403219;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#no-intend {
+    margin-top: -3vh;
+}
+
+.ahrpa-section-who-can-apply {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    height: auto;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.ahrpa-who-can-apply-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    gap: 1vw;
+}
+
+.ahrpa-who-can-apply-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+    height: auto;
+}
+
+.ahrpa-who-can-apply-container {
+    height: auto;
+    max-height: 30vh;
+    width: 34vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ahrpa-who-can-apply-img {
+    height: 30vh;
+    width: 20vw;
+}
+
+.ahrpa-who-can-apply-para {
+    font-family: "Instrument Sans";
+    color: #403219;
+    font-size: 20px;
+    font-weight: 550;
+}
+
+.not-ahrpa-nurses-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    background: #fff;
+    padding-top: 50px;
+}
+
+.ahrpa-section-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+
+.not-ahrpa-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-top: 40px;
+}
+
+.not-ahrpa-section-byline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+    height: auto;
+    text-align: center;
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 550;
+    color: #403219;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.not-ahrpa-section-byline span {
+    color: #ffcc80;
+}
+
+.not-ahrpa-byline-para {
+    margin-top: 10px;
+}
+
+.not-ahrpa-byline-heading {
+    font-size: 16px;
+}
+
+.nclex-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    margin-top: 40px;
+}
+
+.what-is-nclex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50vw;
+    height: auto;
+}
+
+.what-is-nclex-heading {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-size: 64px;
+    font-weight: lighter;
+    letter-spacing: -2.5px;
+    color: #8A6EFF;
+}
+
+.what-is-nclex-heading span {
+    color: #ffcc80;
+}
+
+.what-is-nclex-byline {
+    font-size: 19px;
+    color: #403219;
+    font-family: "Instrument Sans", sans-serif;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nclex-includes {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    width: 100vw;
+    height: auto;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.nclex-includes-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    height: auto;
+    margin-top: 40px;
+}
+
+#too-intend {
+    margin-bottom: -3vh;
+}
+
+.what-is-osce-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.what-is-osce-heading {
+    font-size: 64px;
+    color: #8A6EFF;
+    font-family: "Instrument Serif", serif;
+    font-weight: lighter;
+    font-style: italic;
+    letter-spacing: -2.5px;
+}
+
+.what-is-osce-heading span {
+    color: #ffcc80;
+}
+
+.what-is-osce-para {
+    width: 50vw;
+    height: auto;
+    text-align: center;
+    color: #403219;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 19px;
+}
+
+.osce-covers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    margin-top: 40px;
+}
+
+.osce-covers-heading {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    align-items: center;
+    width: 100vw;
+}
+
+.get-ready-button {
+    padding: 10px 24px;
+    font-size: 20px;
+    color: #ffeac8;
+    background: #8A6EFF;
+    font-family: "Instrument Sans", sans-serif;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    border-radius: 28px;
+    margin-top: 20px;
+}
+
+.get-ready-button:hover {
+    background: #ffeac8;
+    color: #8A6EFF;
+}
+
+.osce-covers-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    height: auto;
+    margin-top: 20px;
+    flex-direction: row;
+}
+
+.osce-covers-bottom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 26vw;
+    height: auto;
+    min-height: 65vh;
+}
+
+.osce-covers-container-img {
+    height: 60vh;
+    width: 100%;
+}
+
+.osce-covers-bottom-heading {
+    font-size: 20px;
+    color: #403219;
+    font-weight: 550;
+    font-family: "Instrument Sans", sans-serif;
+    width: 100%;
+    text-align: left;
+    height: auto;
+    margin-top: 20px;
+}
+
+#very-down {
+    margin-top: -2vh;
+}
+
+#too-down {
+    margin-top: -5vh;
+}
+
+.osce-covers-bottom-para {
+    font-size: 17px;
+    color: #403219;
+    font-family: "Instrument Sans", sans-serif;
+    width: 100%;
+    text-align: left;
+    height: auto;
+    margin-top: 5px;
+}
+
+.who-can-apply-osce-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100vw;
+    height: auto;
+}
+
+.sub-heading {
+    width: 100vw;
+    gap: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.who-can-apply-osce-bottom {
+    width: 90vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.who-can-apply-osce-left-container, .who-can-apply-osce-right-container {
+    width: 42vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.who-can-apply-osce-left-top, .who-can-apply-osce-left-bottom {
+    display: flex;
+    width: 90%;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+.who-can-apply-osce-lt-img {
+    width: 40%;
+    height: 28vh;
+}
+
+.who-can-apply-osce-lt-text {
+    width: 50%;
+    height: auto;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 550;
+    color: #403219;
+}
+
+@media (max-width: 800px) {
+    .who-can-apply-osce-lt-text {
+        font-size: 15px;
+    }
+}
+
+.who-can-apply-osce-right-item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    gap: 10%;
+}
+
+.who-can-apply-osce-right-left, .who-can-apply-osce-right-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.who-can-apply-osce-right-left {
+    width: 30%;
+}
+
+.who-can-apply-osce-right-right {
+    width: 60%;
+}
+
+.purp {
+    background: #8a6eff;
+    color: #ffeac8;
+    border-radius: 8px;
+    padding: 10px 24px;
+}
+
+.orange {
+    background: #ffeac8;
+    color: #403219;
+    border-radius: 8px;
+    padding: 10px 24px;
+}
+
+#special-item {
+    background: #8a6eff;
+    color: #ffeac8;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.why-ed2careers-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+    background: #fff;
+    padding-top: 50px;
+}
+
+.why-ed2careers-section-heading {
+    font-size: 64px;
+    font-family: "Instrument Serif", serif;
+    font-weight: lighter;
+    font-style: italic;
+    color: #8A6EFF;
+    letter-spacing: -2.5px;
+}
+
+.why-ed2careers-section-heading span {
+    color: #ffcc80;
+}
+
+.why-ed2careers-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 80vw;
+    margin-top: 40px;
+    gap: 8vh;
+}
+
+.why-ed2careers-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+    height: auto;
+}
+
+.why-ed2careers-row-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: auto;
+    flex-direction: column;
+    gap: 2vh;
+    align-self: flex-start;
+}
+
+.why-ed2careers-row-container-top-line {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5vw;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    align-self: flex-start;
+}
+
+.why-ed2careers-img {
+    height: 80px;
+    width: 80px;
+}
+
+.why-ed2careers-tl-para {
+    font-size: 20px;
+    font-weight: 550;
+    font-family: "Instrument Sans", sans-serif;
+    color: #403219;
+}
+
+.why-ed2careers-row-container-bottom-line {
+    font-size: 15px;
+    font-weight: 300;
+    font-family: "Instrument Sans", sans-serif;
+    color: #403219;
+}
+
+.why-ed2careers-row-container-bottom-line span {
+    font-weight: 550;
+}
+
+@media screen and (max-width: 800px) {
+    .about-artemis-hospitals-section {
+        flex-direction: column;
+        height: auto;
+        width: 100vw;
+        gap: 5vh;
+        padding: 20px 5vw;
+    }
+
+    .about-artemis-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-artemis-left-heading {
+        text-align: center;
+        width: 90vw;
+    }
+
+    .about-artemis-image {
+        width: 100%;
+        height: 40vh;
+    }
+
+    .hero-paragraph {
+        width: 90vw;
+        text-align: center;
+    }
+
+    .hero-heading-1, .hero-heading-2, .hero-para-small {
+        width: 100vw;
+    }
+
+    .hero-heading-2 {
+        width: 90vw;
+    }
+
+    .hero-heading-1 {
+        font-size: 28px;
+        letter-spacing: -3px;
+    }
+
+    .about-artemis-left-button {
+        align-self: center;
+    }
+
+    .ahrpa-heading {
+        text-align: center;
+    }
+
+    .ahrpa-byline-small {
+        font-size: 24px;
+    }
+
+    .ahrpa-byline-para {
+        width: 85vw;
+    }
+
+    .ahrpa-highlights-bigrow {
+        flex-direction: column;
+        gap: 4vh;
+    }
+
+    .ahrpa-highlights-row-1, .ahrpa-highlights-row-2 {
+        gap: 4vh;
+    }
+
+    .ahrpa-highlights-container {
+        width: 70vw;
+    }
+
+    .ahrpa-who-can-apply-heading {
+        width: 100vw;
+        font-size: 20px;
+    }
+
+    .ahrpa-who-can-apply-bottom {
+        flex-direction: column;
+    }
+
+    .ahrpa-who-can-apply-container {
+        width: 70vw;
+        flex-direction: column;
+    }
+
+    .ahrpa-who-can-apply-img {
+        width: 60%;
+    }
+
+    .ahrpa-who-can-apply-para {
+        text-align: center;
+    }
+
+    .ahrpa-heading {
+        font-size: 44px;
+        text-align: center;
+    }
+    
+    .not-ahrpa-byline-heading, .not-ahrpa-byline-para {
+        width: 85vw;
+    }
+
+    .what-is-nclex-heading {
+        font-size: 44px;
+        text-align: center;
+    }
+
+    .what-is-nclex-byline {
+        width: 85vw;
+    }
+
+    .nclex-includes-bottom {
+        flex-direction: column;
+        gap: 7vh;
+    }
+
+    .ahrpa-highlights-row-1, .ahrpa-highlights-row-2 {
+        width: 90vw;
+    }
+
+    .what-is-osce-heading {
+        text-align: center;
+        font-size: 44px;
+    }
+
+    .what-is-osce-para {
+        width: 85vw;
+    }
+
+    .osce-covers-bottom {
+        flex-direction: column;
+        gap: 7vh;
+    }
+
+    .osce-covers-bottom-row-1, .osce-covers-bottom-row-2 {
+        flex-direction: column;
+        gap: 7vh;
+    }
+
+    .osce-covers-bottom-container {
+        width: 80vw;
+    }
+
+    .who-can-apply-osce-bottom {
+        flex-direction: column;
+    }
+
+    .who-can-apply-osce-left-container, .who-can-apply-osce-right-container {
+        width: 90vw;
+    }
+
+    .why-ed2careers-section-heading {
+        font-size: 44px;
+        text-align: center;
+    }
+
+    .why-ed2careers-bottom-row {
+        flex-direction: column;
+        gap: 8vh;
+    }
+    
+    .why-ed2careers-row-container {
+        width: 85vw;
+    }
+
+    .ahrpa-byline-heading {
+        width: 100vw;
+        font-size: 20px;
+    }
+
+    .ahrpa-highlights-heading {
+        width: 100vw;
+        font-size: 18px;
+    }
+
+    .not-ahrpa-heading {
+        width: 100vw;
+        font-size: 20px;
+    }
+
+    .nclex-includes {
+        width: 100vw;
+        font-size: 20px;
+    }
+    
+    .osce-covers-heading {
+        width: 100vw;
+    }
+
+    .sub-heading {
+        width: 100vw;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    body {
+        background: linear-gradient(to bottom, #ffcc80 0%, white 10%);
+    }
+}
+@media (max-width: 1024px) {
+
+    body {
+        background: linear-gradient(to bottom, #ffcc80 0%, white 10%);
+    }
+    .navbar {
+        display: none; /* Hide navbar */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show hamburger menu */
+    }
+}
+
+@media (max-width: 500px) {
+
+    .ahrpa-byline-small {
+        font-size: 20px;
+        width: auto;
+        max-width: 86vw;
+        text-align: center;
+    }
+
+    .ahrpa-byline-heading {
+        width: 100vw;
+    }
+
+    .ahrpa-highlights-heading {
+        width: 100vw;
+        font-size: 20px;
+    }
+
+    .not-ahrpa-heading {
+        width: 100vw;
+        font-size: 20px;
+    }
+
+    .nclex-includes {
+        width: 100vw;
+        font-size: 20px;
+    }
+    
+    .osce-covers-heading {
+        width: 100vw;
+    }
+
+    .sub-heading {
+        width: 100vw;
+        font-size: 20px;
+    }
+}
